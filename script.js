@@ -16,4 +16,19 @@ const resetFont = () => {
   document.getElementById('chgFont').style.fontFamily = ''
 }
 
-// Find and replace of third paragraph
+// Find and replace of third paragraph copied from answer script js file
+function findReplace (event) {
+  event.preventDefault()
+
+  const text =document.getElementById("find-replace").innerHTML
+
+  const searchTerm = document.getElementById("text-find").value
+
+  const replacementTerm = document.getElementById("text-replace").value
+
+  const headAche = new RegExp(searchTerm, "gi")
+  const newText = text.replace(headAche, replacementTerm)
+
+  document.getElementById("find-replace").innerText = newText
+
+}
